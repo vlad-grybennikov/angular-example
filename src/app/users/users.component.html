@@ -1,0 +1,15 @@
+<div>
+  <div class="users-empty" *ngIf="users.length === 0">
+      Users not found. We sorry :(
+    </div>
+  <div class="users-wrapper" *ngIf="users.length > 0">
+    <div class="user-wrapper" *ngFor="let user of users">
+       <img [(src)]="user.avatar" alt="" class="user-avatar" />
+       <div class="user-name">{{user.name}}</div>
+       <div class="user-description" *ngIf="user.description">
+        {{user.description}}
+      </div>
+    </div>
+  </div>
+  <button (click)="deleteUsers()">Delete All</button>
+</div>
